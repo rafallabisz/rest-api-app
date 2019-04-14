@@ -6,6 +6,7 @@ import UsersTable from './UsersTable';
 import Header from './Header';
 import Footer from './Footer';
 import Avatar from '../images/image.jpg';
+import ErrorPage from './ErrorPage';
 
 const API = 'https://reqres.in';
 
@@ -64,9 +65,7 @@ class App extends Component {
         }
         else if (option.method === "PATCH") {
           const users = [...this.state.users];
-          console.log("OK", json)
           const index = users.findIndex(user => user.id === Number(json.value_id))
-          console.log(index)
           if (index !== -1) {
             users[index].first_name = json.value_firstName;
             users[index].last_name = json.value_lastName;
@@ -181,17 +180,18 @@ class App extends Component {
 
           <main>
             <section className="panel">
+              {this.state.err && <ErrorPage />}
               <AddUserModal
                 state={this.state}
                 handleAddUserModal={this.handleAddUserModal}
                 handleInput={this.handleInput}
                 addUser={this.addUser}
               />
-              <UsersTable
+              {!this.state.err && <UsersTable
                 state={this.state}
                 deleteUser={this.deleteUser}
                 handleEditUserModal={this.handleEditUserModal}
-              />
+              />}
 
               <EditUserModal
                 state={this.state}
@@ -199,7 +199,6 @@ class App extends Component {
                 handleInput={this.handleInput}
                 editUser={this.editUser}
               />
-
             </section>
           </main>
         </div>

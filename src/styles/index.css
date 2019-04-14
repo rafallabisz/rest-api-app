@@ -4,19 +4,22 @@
     box-sizing: border-box;
 }
 
+
 .image {
+    min-height: 50px;
+    min-width: 50px;
     height: 10vh;
     width: 10vh;
 }
 
 .header {
-    margin-bottom: 5px;
-}
-
-.header_col {
     padding: 5px 0;
 }
 
-.letter {
+.btn {
+    margin: 5px 0;
+}
+
+.sizeLetter {
     text-transform: capitalize;
 }
