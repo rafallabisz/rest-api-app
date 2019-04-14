@@ -1,3 +1,7 @@
+Rest API app allows download data with fake Rest API. We can also add, edit and delete user. Application in process create.
+---
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
