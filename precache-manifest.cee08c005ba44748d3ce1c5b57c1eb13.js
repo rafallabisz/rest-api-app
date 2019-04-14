@@ -8,23 +8,23 @@ self.__precacheManifest = [
     "url": "/rest-api-app/static/js/runtime~main.d3180edc.js"
   },
   {
-    "revision": "4533d9f85c8f42b3962b",
-    "url": "/rest-api-app/static/js/main.a8e230de.chunk.js"
+    "revision": "090a1c9de974b85a9a8d",
+    "url": "/rest-api-app/static/js/main.f4d3f51f.chunk.js"
   },
   {
-    "revision": "f6b10aa4e2b83e499a38",
-    "url": "/rest-api-app/static/js/2.7cfd094c.chunk.js"
+    "revision": "7108ae8dfc282b431caa",
+    "url": "/rest-api-app/static/js/2.4eb75595.chunk.js"
   },
   {
-    "revision": "4533d9f85c8f42b3962b",
-    "url": "/rest-api-app/static/css/main.8f9efafa.chunk.css"
+    "revision": "090a1c9de974b85a9a8d",
+    "url": "/rest-api-app/static/css/main.e921c848.chunk.css"
   },
   {
-    "revision": "f6b10aa4e2b83e499a38",
+    "revision": "7108ae8dfc282b431caa",
     "url": "/rest-api-app/static/css/2.f81da442.chunk.css"
   },
   {
-    "revision": "e8ab7bfa305f0658a84a17d3572757d5",
+    "revision": "58bfb5642ac87943eaac19a1864b3e50",
     "url": "/rest-api-app/index.html"
   }
 ];

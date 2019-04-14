@@ -1,16 +1,16 @@
 {
-  "main.css": "/rest-api-app/static/css/main.8f9efafa.chunk.css",
-  "main.js": "/rest-api-app/static/js/main.a8e230de.chunk.js",
-  "main.js.map": "/rest-api-app/static/js/main.a8e230de.chunk.js.map",
+  "main.css": "/rest-api-app/static/css/main.e921c848.chunk.css",
+  "main.js": "/rest-api-app/static/js/main.f4d3f51f.chunk.js",
+  "main.js.map": "/rest-api-app/static/js/main.f4d3f51f.chunk.js.map",
   "runtime~main.js": "/rest-api-app/static/js/runtime~main.d3180edc.js",
   "runtime~main.js.map": "/rest-api-app/static/js/runtime~main.d3180edc.js.map",
   "static/css/2.f81da442.chunk.css": "/rest-api-app/static/css/2.f81da442.chunk.css",
-  "static/js/2.7cfd094c.chunk.js": "/rest-api-app/static/js/2.7cfd094c.chunk.js",
-  "static/js/2.7cfd094c.chunk.js.map": "/rest-api-app/static/js/2.7cfd094c.chunk.js.map",
+  "static/js/2.4eb75595.chunk.js": "/rest-api-app/static/js/2.4eb75595.chunk.js",
+  "static/js/2.4eb75595.chunk.js.map": "/rest-api-app/static/js/2.4eb75595.chunk.js.map",
   "index.html": "/rest-api-app/index.html",
-  "precache-manifest.00dfd958fecedb20ef7a3528c5ab56e6.js": "/rest-api-app/precache-manifest.00dfd958fecedb20ef7a3528c5ab56e6.js",
+  "precache-manifest.cee08c005ba44748d3ce1c5b57c1eb13.js": "/rest-api-app/precache-manifest.cee08c005ba44748d3ce1c5b57c1eb13.js",
   "service-worker.js": "/rest-api-app/service-worker.js",
   "static/css/2.f81da442.chunk.css.map": "/rest-api-app/static/css/2.f81da442.chunk.css.map",
-  "static/css/main.8f9efafa.chunk.css.map": "/rest-api-app/static/css/main.8f9efafa.chunk.css.map",
+  "static/css/main.e921c848.chunk.css.map": "/rest-api-app/static/css/main.e921c848.chunk.css.map",
   "static/media/image.jpg": "/rest-api-app/static/media/image.b4f9a703.jpg"
 }
