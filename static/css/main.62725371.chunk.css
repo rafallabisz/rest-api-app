@@ -1,0 +1,2 @@
+*{margin:0;padding:0;box-sizing:border-box}.app{overflow:hidden}.container{min-height:calc(100vh - 100px)}.header{padding:5px 0}.image{min-height:50px;min-width:50px;height:10vh;width:10vh}.btn{margin:5px 0}.sizeLetter{text-transform:capitalize}@media(orientation:portrait){.image{max-height:50px;max-width:50px}}
+/*# sourceMappingURL=main.62725371.chunk.css.map */
