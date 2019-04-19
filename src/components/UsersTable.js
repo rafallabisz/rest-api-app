@@ -27,7 +27,7 @@ const UsersTable = (props) => {
   ))
 
   return (
-    <Table>
+    <Table className="table-hover">
       <thead>
         <tr>
           <th>ID</th>

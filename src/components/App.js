@@ -170,7 +170,7 @@ class App extends Component {
   render() {
 
     return (
-      <div className="App">
+      <div className="app">
         <Header />
         <div className="container">
           <Button
