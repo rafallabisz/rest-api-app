@@ -1,8 +1,8 @@
 import React from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Input, FormGroup, Label } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Input, FormGroup, Label,Spinner } from 'reactstrap';
 
 const EditUserModal = (props) => {
-  const { editUserModal, value_firstName, value_lastName, value_id } = props.state;
+  const { editUserModal, value_firstName, value_lastName, value_id,isLoading } = props.state;
   return (
     <Modal
       isOpen={editUserModal}
@@ -20,7 +20,7 @@ const EditUserModal = (props) => {
             value={value_firstName}
             onChange={props.handleInput} />
         </FormGroup>
-
+        {isLoading && <Spinner color='primary' className='spinner' />}
         <FormGroup>
           <Label for="lastName">Last Name</Label>
           <Input

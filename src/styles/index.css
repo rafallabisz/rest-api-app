@@ -9,8 +9,8 @@
     overflow: hidden;
 }
 
-.container {
-    min-height: calc(100vh - 100px);
+.container-panel {
+    min-height: calc(100vh - 148px);
 }
 
 .header {
@@ -28,8 +28,29 @@
     margin: 5px 0;
 }
 
-.sizeLetter {
+.size-letter {
     text-transform: capitalize;
+}
+
+.spinner {
+    position: fixed;
+    top: 35%;
+    left: 49%;
+}
+
+.header-wrap {
+    display: flex;
+    align-items: center;
+}
+
+.alert-deleted-user {
+    text-align: center;
+    flex-grow: 1;
+    background-color: #F8D7DA;
+    color: #8F444B;
+    padding: 7px 3px;
+    border-radius: 5px;
+    margin-left: 10px;
 }
 
 @media(orientation:portrait) {

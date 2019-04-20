@@ -6,8 +6,8 @@ const UsersTable = (props) => {
     <tr key={user.id}>
       <td>{user.id}</td>
       <td><img src={user.avatar} alt="avatar" className="image" /></td>
-      <td className="sizeLetter">{user.first_name.toLowerCase()}</td>
-      <td className="sizeLetter">{user.last_name.toLowerCase()}</td>
+      <td className="size-letter">{user.first_name.toLowerCase()}</td>
+      <td className="size-letter">{user.last_name.toLowerCase()}</td>
       <td>
         <Button
           color="success"

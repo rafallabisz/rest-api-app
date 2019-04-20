@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button } from 'reactstrap';
+import { Spinner } from 'reactstrap';
 import AddUserModal from './AddUserModal';
 import EditUserModal from './EditUserModal';
 import UsersTable from './UsersTable';
@@ -20,23 +20,23 @@ class App extends Component {
     editUserModal: false,
     value_id: "",
     value_firstName: "",
-    value_lastName: ""
+    value_lastName: "",
+    alertDeletedUser: false
   }
 
   fetchUsers = async (path, option, id) => {
+    this.setState({ isLoading: true })
     await fetch(API + path, option, id)
       .then(response => {
-        if (response.status === 204) return alert(`User of the number id ${id} has been deleted!`)
-        if (response.ok && response.status !== 204) return response.json()
+        if (response.status === 204) return this.handleAlertDelete()
+        if (response.ok) return response.json()
       })
       .then(json => {
-        console.log(option.method, json);
-        const { users, addUserModal } = this.state
+        const { users, addUserModal, editUserModal } = this.state
         if (option.method === "GET") {
           this.setState({
             users: json.data,
-            isLoading: true,
-            err: false,
+            isLoading: false
           })
         }
         else if (option.method === "POST") {
@@ -49,7 +49,7 @@ class App extends Component {
           this.setState({
             users: [...users, newUser],
             addUserModal: !addUserModal,
-            isLoading: true,
+            isLoading: false,
             value_firstName: "",
             value_lastName: ""
 
@@ -60,7 +60,8 @@ class App extends Component {
           const index = users.findIndex(user => user.id === id)
           users.splice(index, 1)
           this.setState({
-            users
+            users,
+            isLoading: false
           })
         }
         else if (option.method === "PATCH") {
@@ -71,22 +72,27 @@ class App extends Component {
             users[index].last_name = json.value_lastName;
             this.setState({
               users,
-              editUserModal: !this.state.editUserModal,
+              editUserModal: !editUserModal,
               value_firstName: "",
               value_lastName: "",
-              value_id: ""
+              value_id: "",
+              isLoading: false
             })
           }
           else {
             alert("Id was not found!")
-            this.setState({ value_id: "" })
+            this.setState({
+              value_id: "",
+              isLoading: false
+            })
           }
         }
       })
       .catch(error => {
         console.error(error)
         this.setState({
-          err: true
+          err: true,
+          isLoading: false
         })
       })
   }
@@ -161,6 +167,11 @@ class App extends Component {
     })
   }
 
+  handleAlertDelete = () => {
+    this.setState({ alertDeletedUser: true });
+    setTimeout(() => this.setState({ alertDeletedUser: false }), 2000);
+  }
+
   componentDidMount() {
     this.fetchUsers("/api/users?per_page=5", {
       method: 'GET'
@@ -171,16 +182,19 @@ class App extends Component {
 
     return (
       <div className="app">
-        <Header />
-        <div className="container">
-          <Button
-            color="primary"
-            onClick={this.handleAddUserModal}>
-            Add User</Button>
+        <header>
+          <Header
+            handleAddUserModal={this.handleAddUserModal}
+            alertDeletedUser={this.state.alertDeletedUser}
+          />
+        </header>
 
+        <div className="container container-panel">
           <main>
             <section className="panel">
               {this.state.err && <ErrorPage />}
+              {this.state.isLoading && <Spinner color='primary' className='spinner' />}
+
               <AddUserModal
                 state={this.state}
                 handleAddUserModal={this.handleAddUserModal}

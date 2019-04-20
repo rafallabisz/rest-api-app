@@ -1,8 +1,8 @@
 import React from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Input, FormGroup, Label } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Input, FormGroup, Label, Spinner } from 'reactstrap';
 
 const AddUserModal = (props) => {
-  const { addUserModal, value_firstName, value_lastName } = props.state;
+  const { addUserModal, value_firstName, value_lastName, isLoading } = props.state;
 
   return (
     <Modal
@@ -21,7 +21,7 @@ const AddUserModal = (props) => {
             value={value_firstName}
             onChange={props.handleInput} />
         </FormGroup>
-
+        {isLoading && <Spinner color='primary' className='spinner' />}
         <FormGroup>
           <Label for="lastName">Last Name</Label>
           <Input
