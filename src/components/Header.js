@@ -9,6 +9,7 @@ const Header = ({ handleAddUserModal, alertDeletedUser }) => {
           <Col className="header_col">Users Management</Col>
         </Row>
       </div>
+
       <div className="header-wrap container">
         <Button
           color="primary"

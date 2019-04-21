@@ -98,9 +98,9 @@ class App extends Component {
   }
 
   addUser = () => {
-    const { value_firstName, value_lastName } = this.state;
+    const { value_firstName, value_lastName, isLoading } = this.state;
     if (!value_firstName || !value_lastName) return alert('Complete the data!')
-    else {
+    else if (!isLoading) {
       const path = '/api/users';
       const request = {
         method: 'POST',
@@ -115,9 +115,9 @@ class App extends Component {
   }
 
   editUser = () => {
-    const { value_firstName, value_lastName, value_id } = this.state;
+    const { value_firstName, value_lastName, value_id, isLoading } = this.state;
     if (!value_firstName || !value_lastName || !value_id) return alert('Complete the data!')
-    else {
+    else if (!isLoading) {
       const path = `/api/users/${value_id}`;
       const request = {
         method: 'PATCH',
@@ -145,11 +145,15 @@ class App extends Component {
   }
 
   handleAddUserModal = () => {
-    this.setState(prevState => ({
-      addUserModal: !prevState.addUserModal,
-      value_firstName: "",
-      value_lastName: ""
-    }))
+    if (this.state.err) {
+      this.setState({ addUserModal: false })
+    } else {
+      this.setState(prevState => ({
+        addUserModal: !prevState.addUserModal,
+        value_firstName: "",
+        value_lastName: ""
+      }))
+    }
   }
 
   handleEditUserModal = () => {
@@ -162,9 +166,11 @@ class App extends Component {
   }
 
   handleInput = (e) => {
-    this.setState({
-      [e.target.name]: e.target.value
-    })
+    if (!this.state.isLoading) {
+      this.setState({
+        [e.target.name]: e.target.value
+      })
+    }
   }
 
   handleAlertDelete = () => {
