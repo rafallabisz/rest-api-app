@@ -27,21 +27,23 @@ const UsersTable = (props) => {
   ))
 
   return (
-    <Table className="table-hover">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Avatar</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th></th>
-        </tr>
-      </thead>
+      <div className="table-responsive">
+        <Table className="table-hover">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Avatar</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th></th>
+            </tr>
+          </thead>
 
-      <tbody>
-        {users}
-      </tbody>
-    </Table>
+          <tbody>
+            {users}
+          </tbody>
+        </Table>
+      </div>
   );
 }
 
