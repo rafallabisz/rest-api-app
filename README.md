@@ -1,6 +1,6 @@
 # [Rest-api-app](https://github.com/rafallabisz/rest-api-app/blob/master/README.md)
 
-Rest API app allows download data with fake Rest API. We can also add, edit and delete user. I used such methods as GET, POST, PATH, DELETE.
+Rest API app is an application for users management. I download data with fake Rest API (https://reqres.in). We can add, edit and delete user. I used such methods as GET, POST, PATH, DELETE.
 
 ## Technologies used in this project:
 - CSS3 (+ Reactstrap)
