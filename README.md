@@ -7,7 +7,7 @@ Rest API app is an application for users management. I download data with fake R
 - React
 
 ## Installation
-```
+```bash
 git clone https://github.com/rafallabisz/rest-api-app.git rest-api-app
 cd rest-api-app
 npm install
